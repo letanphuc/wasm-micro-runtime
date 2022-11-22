@@ -7,11 +7,10 @@
 #define _PLATFORM_INTERNAL_H
 
 #include <autoconf.h>
-#include <zephyr.h>
-#include <kernel.h>
+#include <zephyr/kernel.h>
 #include <version.h>
 #if KERNEL_VERSION_NUMBER >= 0x020200 /* version 2.2.0 */
-#include <sys/printk.h>
+// #include <sys/printk.h>
 #else
 #include <misc/printk.h>
 #endif
@@ -27,14 +26,14 @@
 #ifndef CONFIG_NET_BUF_USER_DATA_SIZE
 #define CONFIG_NET_BUF_USER_DATA_SIZE 0
 #endif
-#include <net/net_pkt.h>
-#include <net/net_if.h>
-#include <net/net_ip.h>
-#include <net/net_core.h>
-#include <net/net_context.h>
+#include <zephyr/net/net_pkt.h>
+#include <zephyr/net/net_if.h>
+#include <zephyr/net/net_ip.h>
+#include <zephyr/net/net_core.h>
+#include <zephyr/net/net_context.h>
 
 #ifdef CONFIG_ARM_MPU
-#include <arch/arm/aarch32/cortex_m/cmsis.h>
+#include <zephyr/arch/arm/aarch32/cortex_m/cmsis.h>
 #endif
 
 #ifndef BH_PLATFORM_ZEPHYR

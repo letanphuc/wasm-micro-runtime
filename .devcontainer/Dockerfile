@@ -42,7 +42,7 @@ WORKDIR /opt/emsdk
 RUN  git pull \
   && ./emsdk install 2.0.26 \
   && ./emsdk activate 2.0.26 \
-  && echo "source /opt/emsdk/emsdk_env.sh" >> /root/.bashrc
+  && echo "source /opt/emsdk/emsdk_env.sh" >> /etc/profile 
 
 #
 # install wasi-sdk
@@ -100,8 +100,8 @@ RUN python3 -m pip install --no-cache-dir --upgrade pip \
 
 # set path, PS and clean up
 ENV PATH "/opt/bazelisk:/opt/clang-llvm/bin:${PATH}"
-RUN echo "export PATH=/opt/bazelisk:/opt/clang-llvm/bin:${PATH}" >> /root/.bashrc \
-  && printf "%s\n" "PS1='\n[ \u@wamr-dev-docker \W ]\n$ '" >> /root/.bashrc \
+RUN echo "export PATH=/opt/bazelisk:/opt/clang-llvm/bin:${PATH}" >> /etc/profile \
+  && printf "%s\n" "PS1='\n[ \u@wamr-dev-docker \W ]\n$ '" >> /etc/profile \
   && apt-get autoremove -y \
   && apt-get clean -y \
   && rm -rf /var/lib/apt/lists/* \

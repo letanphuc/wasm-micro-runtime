@@ -1554,11 +1554,11 @@ atan2(double y, double x)
     return freebsd_atan2(y, x);
 }
 
-double
-sqrt(double x)
-{
-    return freebsd_sqrt(x);
-}
+// double
+// sqrt(double x) __attribute__((weak))
+// {
+//     return freebsd_sqrt(x);
+// }
 
 double
 floor(double x)
@@ -1656,11 +1656,11 @@ fmaxf(float x, float y)
     return freebsd_fmaxf(x, y);
 }
 
-float
-sqrtf(float x)
-{
-    return freebsd_sqrtf(x);
-}
+// float
+// sqrtf(float x) __attribute__((weak))
+// {
+//     return freebsd_sqrtf(x);
+// }
 
 double
 pow(double x, double y)

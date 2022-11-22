@@ -9,6 +9,7 @@ project(wamr)
 enable_language (ASM)
 
 set (WAMR_BUILD_PLATFORM "zephyr")
+set (WAMR_BUILD_GLOBAL_HEAP_SIZE 1024)
 
 # Build as X86_32 by default, change to "AARCH64[sub]", "ARM[sub]", "THUMB[sub]", "MIPS" or "XTENSA"
 # if we want to support arm, thumb, mips or xtensa

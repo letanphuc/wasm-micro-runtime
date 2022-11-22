@@ -46,7 +46,7 @@ case $TARGET in
                 west build -t run
                 ;;
         $STM32_TARGET)
-                west build -b nucleo_f767zi \
+                west build -b stm32f746g_disco \
                            . -p always -- \
                            -DWAMR_BUILD_TARGET=THUMBV7
                 west flash

@@ -20,6 +20,10 @@
 #include "../fast-jit/jit_compiler.h"
 #endif
 
+#ifndef NAN
+#define NAN (0.0 / 0.0)
+#endif
+
 typedef int32 CellType_I32;
 typedef int64 CellType_I64;
 typedef float32 CellType_F32;
